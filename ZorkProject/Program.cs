@@ -9,6 +9,11 @@ namespace ZorkProject
         static List<Location> locations = new List<Location>();
         static int currentLocation;
         static int direction;
+        static string[] directions = new string[]
+        {
+            "NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST", "UP", "DOWN", "IN", "OUT",
+            "N", "NE", "E", "SE", "S", "SW", "W", "NW", "U", "D", "I", "O"
+        }; // 24 total
         static void Main(string[] args)
         {
             GameSetup();
@@ -46,29 +51,39 @@ namespace ZorkProject
 
         static void ProcessCmd(string cmd)
         {
-        }
-
-        static void validateDirection(int d)
-        {
-            if (d < 0)
+            if(cmd == "LOOK")
             {
-                Console.WriteLine("The way is blocked");
+                Console.WriteLine(locations[currentLocation].longDesc);
             }
-            else if (d == 0)
+            else if (locations[currentLocation].directionsDict.ContainsKey(cmd))
             {
-                Console.WriteLine("Can't go that way");
+                int d;
+                locations[currentLocation].directionsDict.TryGetValue(cmd, out d);
+
+                if (d < 0)
+                {
+                    Console.WriteLine("The way is blocked");
+                }
+                else if (d == 0)
+                {
+                    Console.WriteLine("Can't go that way");
+                }
+                else
+                {
+                    currentLocation = d;
+                    Console.WriteLine(locations[currentLocation].shortDesc);
+                    if (locations[currentLocation].visited == false)
+                    {
+                        Console.WriteLine(locations[currentLocation].longDesc);
+                        locations[currentLocation].visited = true;
+                    }
+                }
             }
             else
             {
-                currentLocation = d;
-                Console.WriteLine(locations[currentLocation].shortDesc);
-                if (locations[currentLocation].visited == false)
-                {
-                    Console.WriteLine(locations[currentLocation].longDesc);
-                    locations[currentLocation].visited = true;
-                }
+                Console.WriteLine("Bad Command");
             }
-        }
+        }      
 
         static void LoadLocations()
         {
@@ -92,7 +107,7 @@ namespace ZorkProject
                 }
                 for(int i=0; i<24; i++)
                 {
-                    loc.directionsDict.Add(loc.directions[i], loc.exits[i]); // add [directionName, exit#]
+                    loc.directionsDict.Add(directions[i], loc.exits[i]); // add [directionName, exit#]
                 }
                 locations.Add(loc);
             }
