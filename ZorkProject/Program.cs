@@ -46,65 +46,6 @@ namespace ZorkProject
 
         static void ProcessCmd(string cmd)
         {
-            switch (cmd)
-            {
-                case "LOOK":
-                    Console.WriteLine(locations[currentLocation].longDesc);
-                    break;
-                case "NORTH":
-                case "N":
-                    direction = locations[currentLocation].NORTH;
-                    validateDirection(direction);
-                    break;
-                case "NORTHEAST":
-                case "NE":
-                    direction = locations[currentLocation].NORTHEAST;
-                    validateDirection(direction);
-                    break;
-                case "EAST":
-                case "E":
-                    direction = locations[currentLocation].EAST;
-                    validateDirection(direction);
-                    break;
-                case "SOUTHEAST":
-                case "SE":
-                    direction = locations[currentLocation].SOUTHEAST;
-                    validateDirection(direction);
-                    break;
-                case "SOUTH":
-                case "S":
-                    direction = locations[currentLocation].SOUTH;
-                    validateDirection(direction);
-                    break;
-                case "SOUTHWEST":
-                case "SW":
-                    direction = locations[currentLocation].SOUTHWEST;
-                    validateDirection(direction);
-                    break;
-                case "WEST":
-                case "W":
-                    direction = locations[currentLocation].WEST;
-                    validateDirection(direction);
-                    break;
-                case "NORTHWEST":
-                case "NW":
-                    direction = locations[currentLocation].NORTHWEST;
-                    validateDirection(direction);
-                    break;
-                case "UP":
-                case "U":
-                    direction = locations[currentLocation].UP;
-                    validateDirection(direction);
-                    break;
-                case "DOWN":
-                case "D":
-                    direction = locations[currentLocation].DOWN;
-                    validateDirection(direction);
-                    break;
-                default:
-                    Console.WriteLine("Bad Command");
-                    break;
-            }
         }
 
         static void validateDirection(int d)
@@ -138,7 +79,17 @@ namespace ZorkProject
             while((posLine = sr.ReadLine()) != null)
             {
                 posFields = posLine.Split('\t');
-                Location loc = new Location(Convert.ToInt32(posFields[0]), posFields[1], posFields[2], posFields[3], Convert.ToInt32(posFields[4]), Convert.ToInt32(posFields[5]), Convert.ToInt32(posFields[6]), Convert.ToInt32(posFields[7]), Convert.ToInt32(posFields[8]), Convert.ToInt32(posFields[9]), Convert.ToInt32(posFields[10]), Convert.ToInt32(posFields[11]), Convert.ToInt32(posFields[12]), Convert.ToInt32(posFields[13]));
+                Location loc = new Location();
+                loc.ID = Convert.ToInt32(posFields[0]);
+                loc.shortDesc = posFields[1];
+                loc.longDesc = posFields[2];
+                loc.initDesc = posFields[3];
+                for(int i=0; i<12; i++)
+                {
+                    int num = 0;
+                    int.TryParse(posFields[5+i], out num);
+                    loc.exits[i] = num;
+                }
                 locations.Add(loc);
             }
         }

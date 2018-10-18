@@ -6,7 +6,7 @@ namespace ZorkProject
 {
     class GameObject
     {
-        public int locID;
+        public int ID;
         public string shortDesc;
         public string longDesc;
         public string initDesc;
