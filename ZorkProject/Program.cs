@@ -87,8 +87,12 @@ namespace ZorkProject
                 for(int i=0; i<12; i++)
                 {
                     int num = 0;
-                    int.TryParse(posFields[5+i], out num);
+                    int.TryParse(posFields[5+i], out num); // parse exits, converting to int, and adding exits[] array
                     loc.exits[i] = num;
+                }
+                for(int i=0; i<24; i++)
+                {
+                    loc.directionsDict.Add(loc.directions[i], loc.exits[i]); // add [directionName, exit#]
                 }
                 locations.Add(loc);
             }

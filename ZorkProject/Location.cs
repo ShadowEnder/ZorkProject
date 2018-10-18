@@ -6,13 +6,21 @@ namespace ZorkProject
 {
     class Location : GameObject
     {
-        public bool visited;
+        public bool visited = false;
 
         public int[] exits = new int[12]; // NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST, UP, DOWN, IN, OUT
 
+        public string[] directions = new string[] 
+        {
+            "NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST", "UP", "DOWN", "IN", "OUT",
+            "N", "NE", "E", "SE", "S", "SW", "W", "NW", "U", "D", "I", "O"
+        }; // 24 total
+
+        public Dictionary<string, int> directionsDict = new Dictionary<string, int>();
+
         public Location()
         {
-            //visited = false;
+
         }
      }
 }
