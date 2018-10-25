@@ -42,7 +42,7 @@ namespace ZorkProject
                 
             }
             string input = Console.ReadLine();
-            while (!(input.ToUpper().Equals("QUIT")))
+            while (!(input.ToUpper().Equals("QUIT")) && !(input.ToUpper().Equals("Q")))
             {
                 ProcessCmd(input.ToUpper());
                 input = Console.ReadLine();
@@ -102,12 +102,16 @@ namespace ZorkProject
                 for(int i=0; i<12; i++)
                 {
                     int num = 0;
-                    int.TryParse(posFields[5+i], out num); // parse exits, converting to int, and adding exits[] array
+                    int.TryParse(posFields[4+i], out num); // parse exits, converting to int, and adding exits[] array
                     loc.exits[i] = num;
                 }
-                for(int i=0; i<24; i++)
+                for(int i=0; i<12; i++)
                 {
-                    loc.directionsDict.Add(directions[i], loc.exits[i]); // add [directionName, exit#]
+                    loc.directionsDict.Add(directions[i], loc.exits[i]); // add [directionName, exit#] for long names, ex: NORTH, SOUTH, etc.
+                }
+                for(int i=0; i<12; i++)
+                {
+                    loc.directionsDict.Add(directions[12+i], loc.exits[i]); // add [directionName, exit#] for short names, ex: N, S, SW, etc.
                 }
                 locations.Add(loc);
             }
