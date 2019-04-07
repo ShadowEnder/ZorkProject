@@ -1,0 +1,25 @@
+1	West of House	You are standing in an open field west of a white house, with a boarded front door.		4	0	0	0	2	-20	8	0	0	0	0	0
+2	South of House	You are facing the south side of a white house. There is no door here, and all the windows are boarded.		0	0	3	0	9	0	1	0	0	0	0	0
+3	Behind House	You are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.		4	0	10	0	2	0	-13	0	0	0	-13	0
+4	North of House	You are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.		5	0	3	0	0	0	1	0	0	0	0	0
+5	Forest Path	This is a path winding through a dimly lit forest. The path heads north-south here. One particularly large tree with some low branches stands at the edge of the path.		7	0	11	0	4	0	8	0	6	0	0	0
+6	Up a Tree	You are about 10 feet above the ground nestled among some large branches. The nearest branch above you is above your reach.		0	0	0	0	0	0	0	0	0	5	0	0
+7	Clearing	You are in a clearing, with a forest surrounding you on all sides. A path leads south		0	0	11	0	5	0	8	0	0	-109	0	0
+8	Forest	This is a forest, with trees in all directions. To the east, there appears to be sunlight.		7	0	5	0	9	0	0	0	0	0	0	0
+9	Forest	This is a dimly lit forest, with large trees all around.		10	0	0	0	0	0	8	2	0	0	0	0
+10	Clearing	You are in a small clearing in a well-marked forest path that extends to the east and west.		11	0	16	0	9	0	3	0	0	0	0	0
+11	Forest	This is a dimly lit forest, with large trees all around. You hear in the distance the chirping of a song bird.		0	0	12	0	10	0	5	0	0	0	0	0
+12	Forest	The forest thins out, revealing impassable mountains.		11	0	0	0	11	0	11	0	0	0	0	0
+13	Kitchen	You are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.		0	0	-10	0	0	0	15	0	14	0	0	-3
+14	Attic	This is the attic. The only exit is a stairway leading down.		0	0	0	0	0	0	0	0	0	13	0	0
+15	Living Room	You are in the living room. There is a doorway to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, a trophy case, and a large oriental rug in the center of the room.		0	0	13	0	0	0	-26	0	0	-22	0	0
+16	Canyon View	You are at the top of the Great Canyon on its west wall. From here there is a marvelous view of the canyon and parts of the Frigid River upstream. Across the canyon, the walls of the White cliffs join the mighty ramparts of the Flathead Mountains to the east. Following the Canyon upstream to the north, Aragain Falls may be seen, complete with rainbow. The mighty Frigid River flows out from a great dark cavern. To the west and south can be seen an immense forest, stretching for miles around. A path leads northwest. It is possible to climb down into the canyon from here.		0	0	0	0	0	0	9	10	0	17	0	0
+17	Rocky Ledge	You are on a ledge about halfway up the wall of the river canyon. You can see from here that the main flow from Aragain Falls twists along a passage which it is impossible for you to enter. Below you is the canyon bottom. Above you is more cliff, which appears climbable.		0	0	0	0	0	0	0	0	16	18	0	0
+18	Canyon Bottom	You are beneath the walls of the river canyon which may be climbable here. The lesser part of the run of Aragain Falls flows by below. To the north is a narrow path.		19	0	0	0	0	0	0	0	17	0	0	0
+19	End of Rainbow	You are on a small, rocky beach on the continuation of the Frigid River past the Falls. The beach is narrow due to the presence of the White Cliffs. The river canyon opens here and sunlight shines in from above. A rainbow crosses over the falls to the east and a narrow path continues to the southwest.		0	0	-81	0	0	18	0	0	0	0	0	0
+20	Stone Barrow			0	-1	0	0	0	0	21	0	0	0	0	0
+21	Inside the Barrow			0	0	20	0	999	0	0	0	0	0	0	0
+22	Cellar			29	0	0	0	23	0	0	0	-15	0	0	0
+23	East of Chasm			22	0	24	0	0	0	0	0	0	0	0	0
+24	Gallery			25	0	0	0	0	0	23	0	0	0	0	0
+25	Studio			0	0	0	0	24	0	0	0	-13	0	0	0

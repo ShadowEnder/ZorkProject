@@ -90,7 +90,7 @@ namespace ZorkProject
             string posLine;
             string[] posFields;
             locations.Add(null); // [0] is blank
-            StreamReader sr = new StreamReader("C:\\Users\\Shadow\\Desktop\\CW Post\\CS 116\\Zork Project\\ZorkInfo.tbf");
+            StreamReader sr = new StreamReader("..\\..\\..\\..\\ZorkInfo.tbf");
             while((posLine = sr.ReadLine()) != null)
             {
                 posFields = posLine.Split('\t');
